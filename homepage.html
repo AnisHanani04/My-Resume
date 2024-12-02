@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home Page</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" type="text/css" href="index.css">
+
+<style>
+	.w3-bar-block .w3-bar-item {
+		padding: 20px;
+    }
+
+	h1 {
+		margin: 10px;
+	}
+
+	p {
+		margin: 20px;
+	}
+
+	div.gallery {
+		border: 2px solid #ccc;
+		margin: 15px;
+	}
+
+	div.gallery:hover {
+		border: 2px solid #BC8F8F;
+	}
+
+	div.gallery img {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+	}
+
+	div.desc {
+		padding: 10px;
+		text-align: center;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.responsive {
+		padding: 0 6px;
+		float: left;
+		width: 24.99999%;
+	}
+
+	@media only screen and (max-width: 700px) {
+		.responsive {
+		width: 49.99999%;
+		margin: 6px 0;
+		}
+	}
+
+	@media only screen and (max-width: 500px) {
+		.responsive {
+		width: 100%;
+		}
+	}
+
+	.clearfix:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	a:link {
+		color: white;
+		background-color: transparent;
+		text-decoration: none;
+	}
+
+	a:visited {
+		color: white;
+		background-color: transparent;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: pink;
+		background-color: transparent;
+		text-decoration: underline;
+	}
+
+	a:active {
+		color: lavender;
+		background-color: transparent;
+		text-decoration: underline;
+	}
+
+	p.outset {
+		border-style: outset;
+		border-color:#BC8F8F;
+		width: 30%;
+	}
+
+</style>
+</head>
+<body onload="startTime()">
+
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display: none;" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large" style="color: black; background-color:white; text-decoration: none;" onclick="w3_close()">Close</button>
+    <a href="homepage.html" style="color: black; background-color:white; text-decoration: none;" class="w3-bar-item w3-button">Home Page</a>
+	<a href="gallery.html" style="color: black; background-color:white; text-decoration: none;" class="w3-bar-item w3-button">Gallery</a>
+    <a href="index.html" style="color: black; background-color:white; text-decoration: none;" class="w3-bar-item w3-button">About Me</a>
+  </div>
+
+  <div id="main">
+    <div class="w3-top">
+      <div class="w3-xlarge" style="max-width:1200px;margin:auto">
+        <div style="color:black" class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+        <div style="color:black" class="w3-right w3-padding-16">
+          <a href="https://music.youtube.com/playlist?list=PLWanwKnlJIeAA4lvjBICwvMup2wzeV4iW">
+            <img src="youtube.png" alt="Youtube" width="50" height="50">
+          </a>
+        </div>
+      </div>
+    </div>
+   </div>
+
+  <script>
+    function w3_open() {
+      document.getElementById("main").style.marginLeft = "25%";
+      document.getElementById("mySidebar").style.width = "25%";
+      document.getElementById("mySidebar").style.display = "block";
+    }
+    function w3_close() {
+      document.getElementById("main").style.marginLeft = "0";
+      document.getElementById("mySidebar").style.display = "none";
+    }
+  </script>
+  
+    <div class="w3-container">
+      <br>
+      <header></header>
+	  
+	  <div id="txt" style="font-size:25px; margin: 1%;"></div>
+
+	<script>
+		function startTime() {
+		const today = new Date();
+		let h = today.getHours();
+		let m = today.getMinutes();
+		let s = today.getSeconds();
+		m = checkTime(m);
+		s = checkTime(s);
+		document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+		setTimeout(startTime, 1000);
+		}
+
+		function checkTime(i) {
+		if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		return i;
+		}
+	</script>
+	  
+<center><h1 style="color: #eee; text-shadow: 2px 3px black;"><font size="20" padding="20px"><border> Home Page</border></font></h1></center>
+<p class="outset">To visit my website, click the link below: </p><br>
+
+<center><iframe width="820" height="445" src="https://www.youtube.com/embed/ArQpTYHixl0?playlist=ArQpTYHixl0&autoplay=1&mute=1&loop=1">
+</iframe>
+
+<div style="padding:30px;">
+<div class="responsive">
+  <div class="gallery">
+      <img src="aboutme.jpg" alt="About Me" width="600" height="400">
+    <div class="desc"><a href="index.html#about" title="Go to About Me Page" target="_blank">About me</a></div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="f1.jpg" alt="Family" style=  width="600" height="400">
+    <div class="desc"><a href="index.html#family" title="Go to Family Page" target="_self">Family</a></div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="b1.jpg" alt="Biodata" width="600" height="400">
+    <div class="desc"><a href="index.html" title="Go to Biodata Page" target="_self">Biodata</a></div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="gadgets.jpg" alt="Tab and Books" width="600" height="400">
+    <div class="desc"><a href="index.html#education" title="Go to Education Page" target="_self">Education</a>
+  </div> 
+ </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="g1.jpg" alt="Gallery" width="600" height="400">
+    <div class="desc"><a href="gallery.html" title="Go to Gallery" target="_self">Gallery</a>
+  </div>
+ </div>
+</div>
+
+<div class="clearfix"></div>
+
+<p class="outset">Please click on the laptop, book or tablet below: </p><br>
+<img src="education.jpg" alt="Laptop, Book and Tablet"  usemap="#foodmap" width="736" height="736" >
+
+<br>
+<map name="foodmap">
+  <area shape="rect" coords="185,177,482,454" alt="laptop" href="https://www.apple.com/my/macbook-pro/" title="Go to Apple Website for Macbook-Pro">
+  <area shape="rect" coords="363,458,721,728" alt="tablet" href="https://www.apple.com/my/ipad/" title="Go to Apple Website for iPad">
+  <area shape="rect" coords="21,421,327,677" alt="book" href="https://www.harrypotter.com/discover/books" title="Go to Harrypotter Official Website">
+</map>
+
+</center>
+
+<footer>
+  <center><p><b> &diams; 	&#169;2024 Anis's Website. All Right Reserved. &diams; </b></p></center>
+</footer>
+
+</body>
+</html>

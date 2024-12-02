@@ -1,0 +1,35 @@
+  h1,h2,h3,h5 {
+	 font-family: Canva-Sans;
+  }	 
+  
+  body {
+     background-image: url('solidbg1.jpg');
+	 color: white;
+	 font-family: Canva-Sans;
+  }
+
+  header {
+	  background-image: url('y.jpg'); 
+	  height:240px;
+  }
+  
+  footer {
+	  background-color:white; 
+	  padding: 5px;
+	  text-align: center;
+	  font-family: Arial;
+	  color:black;
+  }
+  
+  img {
+     max-width: 100%;
+     height: auto;
+  }
+  
+  @media only screen and (max-width: 300px) {
+      body {
+        font-size: 15px;
+        padding: 5px;
+        text-align: justify;
+      }
+    }
